@@ -17,7 +17,11 @@ class TableFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'Table_No_'.$this->faker->randomNumber(2, false),
+            'description' => $this->faker->sentence(),
+            'capacity' => $this->faker->randomElement([2, 4, 6, 8]),
+            'occupied' => $this->faker->boolean(10),
+            'show' => $this->faker->boolean(80),
         ];
     }
 }

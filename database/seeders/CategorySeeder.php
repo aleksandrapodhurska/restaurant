@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CategorySeeder extends Seeder
 {
@@ -16,7 +15,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        
+
         $nowDate = Carbon::now();
         $faker = \Faker\Factory::create();
 

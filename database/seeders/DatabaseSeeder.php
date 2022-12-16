@@ -28,18 +28,29 @@ class DatabaseSeeder extends Seeder
 
         // Users
         $this->call(ImageSeeder::class);
-        
+
         // Categories
         $this->call(CategorySeeder::class);
 
         // Menus
         $this->call(MenuSeeder::class);
-        
+
         // Menu Items
         $this->call(MenuItemSeeder::class);
 
-         
-        // // category_menu_item Relationship
-        // $this->call(CategoryMenuItemSeeder::class);
+        // Booking statuses
+        $this->call(BookingStatusSeeder::class);
+
+        // Customers seeder
+        $this->call(CustomerSeeder::class);
+
+        // Tables seeder
+        $this->call(TableSeeder::class);
+
+        // Bookings seeder
+        $this->call(BookingSeeder::class);
+
+
+
     }
 }

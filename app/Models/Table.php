@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use DateTime;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,12 +29,38 @@ class Table extends Model
         'status',
         'show'
     ];
-    // TODO ?????
+
     /**
-     * MenuItems that are related to this category
+     * Bookings related to the table
      */
-    public function status()
+    public function bookings()
     {
-        return $this->belongsToMany('App\Models\Status');
+        return $this->hasMany('App\Models\Booking');
+    }
+
+    /**
+     * Past bookings related to the table
+     */
+    public function pastBookings()
+    {
+        $nowDateTime = Carbon::now()->toDateString();
+        return $this->hasMany('App\Models\Booking')->where('date', '>', $nowDateTime);
+    }
+
+    /**
+     * Future bookings related to the table
+     */
+    public function futureBookings()
+    {
+        $nowDateTime = new DateTime();
+        return $this->hasMany('App\Models\Booking')->where('date', '<', $nowDateTime);
+    }
+
+    /**
+     * Billa related to the table
+     */
+    public function bills()
+    {
+        return $this->hasMany('App\Models\Bill');
     }
 }

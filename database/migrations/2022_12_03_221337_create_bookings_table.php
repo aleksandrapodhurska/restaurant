@@ -24,7 +24,6 @@ return new class extends Migration
             $table->tinyInteger('children')->nullable();
             $table->tinyInteger('infants')->nullable();
             $table->unsignedBigInteger('status')->nullable();
-            $table->boolean('show')->default(0);
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
 
