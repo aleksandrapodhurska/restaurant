@@ -50,7 +50,17 @@ class DatabaseSeeder extends Seeder
         // Bookings seeder
         $this->call(BookingSeeder::class);
 
+        // Transaction modes
+        $this->call(TranactionModeSeeder::class);
 
+        // Bill statuses
+        $this->call(BillStatusSeeder::class);
+
+        // Bills
+        $this->call(BillSeeder::class);
+        // Orders
+        // Jobs
+        // Transactions
 
     }
 }

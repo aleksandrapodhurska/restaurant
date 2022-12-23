@@ -17,7 +17,10 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'bill_id' => 0,
+            'amount' => $this->faker->randomFloat(2, 8, 130),
+            'mode_id' => 0,
+            'status' => $this->faker->boolean(90)
         ];
     }
 }

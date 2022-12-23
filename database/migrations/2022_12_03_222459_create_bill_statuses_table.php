@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('bill_statuses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('status')->nullable();
-            $table->timestamps();
         });
     }
 
