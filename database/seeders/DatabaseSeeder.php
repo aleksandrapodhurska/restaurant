@@ -58,7 +58,12 @@ class DatabaseSeeder extends Seeder
 
         // Bills
         $this->call(BillSeeder::class);
+
+        // Order statuses
+        $this->call(OrderStatusSeeder::class);
+
         // Orders
+        $this->call(OrderSeeder::class);
         // Jobs
         // Transactions
 

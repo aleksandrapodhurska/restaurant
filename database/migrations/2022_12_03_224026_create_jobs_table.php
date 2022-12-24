@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bill_id')->nullable();
             $table->unsignedBigInteger('menu_item_id')->nullable();
-            $table->text('description')->nullable();
+            $table->text('comment')->nullable();
             $table->unsignedBigInteger('status')->nullable();
             $table->timestamps();
             $table->dateTime('accepted_at')->nullable();

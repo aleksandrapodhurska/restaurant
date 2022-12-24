@@ -57,7 +57,7 @@ class Table extends Model
     }
 
     /**
-     * Billa related to the table
+     * Bills related to the table
      */
     public function bills()
     {

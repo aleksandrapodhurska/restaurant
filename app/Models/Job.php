@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Job extends Model
 {
     use HasFactory;
     /**
@@ -13,7 +13,7 @@ class Order extends Model
      *
      * @var string
      */
-    protected $table = 'orders';
+    protected $table = 'jobs';
 
     /**
      * The attributes that are mass assignable.
@@ -23,22 +23,12 @@ class Order extends Model
     protected $fillable = [
         'bill_id',
         'menu_item_id',
-        'quantity',
-        'price',
-        'total',
-        'discount',
+        'comment',
+        'status',
     ];
 
     /**
-     * Bill related to the order
-     */
-    public function bill()
-    {
-        return $this->belongsTo('App\Models\Bill');
-    }
-
-    /**
-     * Menu item related to the order
+     * Menu item related to the job
      */
     public function menuItem()
     {
@@ -46,10 +36,18 @@ class Order extends Model
     }
 
     /**
-     * Menu item related to the order
+     * Order related to the job
      */
-    public function jobs()
+    public function order()
     {
-        return $this->belongsToMany('App\Models\Job');
+        return $this->belongsToMany('App\Models\Order');
+    }
+
+    /**
+     * Bill related to the job
+     */
+    public function bill()
+    {
+        return $this->belongsTo('App\Models\Bill');
     }
 }

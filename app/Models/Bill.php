@@ -91,4 +91,12 @@ class Bill extends Model
     {
         return $this->hasMany('App\Models\Order');
     }
+
+    /**
+     * Get the jobs related to the bill
+     */
+    public function jobs()
+    {
+        return $this->hasMany('App\Models\Job');
+    }
 }
