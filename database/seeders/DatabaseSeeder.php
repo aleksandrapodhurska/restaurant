@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
 
         // Orders
         $this->call(OrderSeeder::class);
-        // Jobs
+
         // Transactions
 
     }

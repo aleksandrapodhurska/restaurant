@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+// Categories
+Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
+// Menues
+Route::resource('/menues', \App\Http\Controllers\MenuController::class);
+Route::get('/menues/search/{name}', [\App\Http\Controllers\MenuController::class, 'search']);
+
+// Menu Items
+Route::resource('/menu-items', \App\Http\Controllers\MenuItemController::class);
+
+// Tables
+Route::resource('/tables', \App\Http\Controllers\TableController::class);
