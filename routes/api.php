@@ -20,12 +20,18 @@ use Illuminate\Support\Facades\Route;
 
 // Categories
 Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
-// Menues
-Route::resource('/menues', \App\Http\Controllers\MenuController::class);
-Route::get('/menues/search/{name}', [\App\Http\Controllers\MenuController::class, 'search']);
+
+// Menus
+Route::resource('/menus', \App\Http\Controllers\MenuController::class);
+Route::get('/menus/search/{name}', [\App\Http\Controllers\MenuController::class, 'search']);
 
 // Menu Items
 Route::resource('/menu-items', \App\Http\Controllers\MenuItemController::class);
 
 // Tables
 Route::resource('/tables', \App\Http\Controllers\TableController::class);
+
+// Registration, auth, logout
+Route::post('/users', [\App\Http\Controllers\UserController::class, 'store']);
+Route::post('/users/authenticate', [\App\Http\Controllers\UserController::class, 'authenticate'])->name('login');
+Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout']);

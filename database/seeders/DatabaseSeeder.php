@@ -23,12 +23,15 @@ class DatabaseSeeder extends Seeder
 
 
         // Reference on how to call other seeders in sequence
-        // Users
-        $this->call(UserSeeder::class);
+        // Roles and Permissions
+        $this->call(RoleAndPermissionSeeder::class);
 
-        // Users
+
+        // Images
         $this->call(ImageSeeder::class);
 
+        // Users
+        $this->call(UserSeeder::class);
         // Categories
         $this->call(CategorySeeder::class);
 
